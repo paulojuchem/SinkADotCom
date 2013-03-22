@@ -60,8 +60,8 @@ class Application {
 			
 			while(x < 0 || y < 0 || x > 7 || y > 7){
 
-				y = this.gh.getUserInput("Insire um palpite para o eixo Y")-1;
 				x = this.gh.getUserInput("Insire um palpite para o eixo X")-1;
+				y = this.gh.getUserInput("Insire um palpite para o eixo Y")-1;
 
 			}
 
