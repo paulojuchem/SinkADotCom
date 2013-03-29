@@ -58,10 +58,10 @@ class Application {
 			int x = -1;
 			int y = -1;
 			
-			while(x < 0 || y < 0 || x > 7 || y > 7){
+			while((x < 0 || y < 0) && (x < 8 || y < 8)){
 
-				x = this.gh.getUserInput("Insire um palpite para o eixo X")-1;
-				y = this.gh.getUserInput("Insire um palpite para o eixo Y")-1;
+				y = this.getCharPos(this.gh.getUserInput("Insire um palpite (A-G)"));
+				x = Integer.parseInt(this.gh.getUserInput("Insire um palpite para o eixo X"))-1;
 
 			}
 
@@ -98,9 +98,47 @@ class Application {
 
 	}
 
+	public int getCharPos(String pos){
+
+		if(pos.compareTo("A") == 0 || pos.compareTo("a") ==0){
+
+			return 0;
+
+		} else if(pos.compareTo("B") == 0 || pos.compareTo("b") == 0){
+
+			return 1;
+
+		} else if(pos.compareTo("C") ==0 || pos.compareTo("c") ==0){
+
+			return 2;
+
+		} else if(pos.compareTo("D") ==0 || pos.compareTo("d") ==0){
+
+			return 3;
+
+		} else if(pos.compareTo("E") ==0 || pos.compareTo("e") ==0){
+
+			return 4;
+
+		} else if(pos.compareTo("F") ==0 || pos.compareTo("f") ==0){
+
+			return 5;
+
+		} else if(pos.compareTo("G") ==0 || pos.compareTo("g") ==0){
+
+			return 6;
+
+		} else {
+
+			return 0;
+
+		}
+
+	}
+
 	public void printField(){
 
-		System.out.println("|  *  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |");
+		System.out.println("|  *  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |");
 
 		String lbl = "";
 

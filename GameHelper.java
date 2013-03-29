@@ -2,7 +2,7 @@ import java.io.*;
 
 class GameHelper {
 	
-	public int getUserInput(String lbl){
+	public String getUserInput(String lbl){
 
 		String inputLine = null;
 		System.out.println(lbl+" ");
@@ -16,7 +16,7 @@ class GameHelper {
 
 				try{
 
-					return Integer.parseInt(inputLine);
+					return inputLine;
 
 				} catch (Exception e){
 
@@ -33,7 +33,7 @@ class GameHelper {
 
 		}
 
-		return 0;
+		return null;
 
 	}
 
